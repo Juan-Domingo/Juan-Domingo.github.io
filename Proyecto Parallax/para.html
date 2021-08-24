@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page con Parallax</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Sobre el proyecto</a></li>
+            <li><a href="#">Trabajo</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="/images/stars.png" id="stars">
+        <img src="/images/moon.png" id="moon">
+        <img src="/images/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Henry</h2>
+        <a href="#sec" id="btn">Inicio</a>
+        <img src="/images/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id='sec'>
+        <h2>Efecto Parallax</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus vel voluptate ipsum, id amet eaque iusto quia atque corporis nam asperiores earum, quis at totam rerum quo blanditiis, deleniti quibusdam.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sit eos libero in iure consequuntur. Ab rem quibusdam quas neque nihil, labore beatae consectetur dignissimos officia porro? Quaerat, odio sequi?<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus amet velit neque reprehenderit aperiam, asperiores enim unde qui impedit adipisci alias numquam assumenda ut magnam vel ducimus sed ipsam.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eveniet necessitatibus sed sit, possimus quisquam aliquam aliquid tempora molestiae blanditiis, dignissimos nostrum odio repellendus quas recusandae placeat in ipsa saepe?</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginBottom = value * 4 + 'px';
+        })
+    </script>
+</body>
+</html>
